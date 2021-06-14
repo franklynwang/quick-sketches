@@ -45,7 +45,7 @@ jobs:
         env:
           # Python 2.7 on Windows requires a workaround for C++11 support,
           # built separately below
-          CIBW_SKIP: cp38-win*
+          CIBW_BUILD: cp38-*
 
       - name: Verify clean directory
         run: git diff --exit-code
