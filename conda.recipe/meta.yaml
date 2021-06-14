@@ -17,10 +17,10 @@ requirements:
     - python
     - pip
     - pybind11 >=2.6.0
-    - numpy >=1.16
 
   run:
     - python
+    - numpy >=1.16
 
 test:
   imports:
