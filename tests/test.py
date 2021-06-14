@@ -1,4 +1,4 @@
-import fast_sketches as m
+import quick_sketches as m
 import numpy as np
 
 a = np.array([3, 4, 5])
