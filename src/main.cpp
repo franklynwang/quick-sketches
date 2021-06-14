@@ -153,7 +153,7 @@ py::array_t<double> count_sketch_preds(int nhashes, py::array_t<ll> np_input, ll
     return res;
 }
 
-PYBIND11_MODULE(fast_sketches, m)
+PYBIND11_MODULE(quick_sketches, m)
 {
     m.doc() = "Count-Min & Count-Sketch Python Bindings"; // optional module docstring
     m.def("cm_sketch_preds", &cm_sketch_preds, "Count-Min Sketch Predictions");
