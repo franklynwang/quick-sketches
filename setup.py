@@ -39,6 +39,9 @@ setup(
     long_description_content_type="text/markdown",
     ext_modules=ext_modules,
     extras_require={"test": "pytest"},
+    install_requires=[
+        'numpy>=1.16',
+    ],
     # Currently, build_ext only provides an optional "highest supported C++
     # level" feature, but in the future it may provide more features.
     cmdclass={"build_ext": build_ext},
