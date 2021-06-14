@@ -11,7 +11,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
+    - {{compiler('cxx')}}
 
   host:
     - python
@@ -21,10 +21,9 @@ requirements:
   run:
     - python
 
-
 test:
   imports:
-    - python_example
+    - quick_sketches
   source_files:
     - tests
   commands:
