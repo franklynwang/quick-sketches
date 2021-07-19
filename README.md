@@ -4,8 +4,6 @@ While implementing a paper, we had to create a new library for Count-Min Sketche
 
 We include a Python Package that contains Python bindings to a C++ library to calculate the results of the count-min sketch and count-sketches.
 
-NOTE: this only works on Mac in our current version.
-
 First, you will need pybind11, so run
 
 `pip install pybind11`
