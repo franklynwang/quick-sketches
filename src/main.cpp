@@ -18,7 +18,7 @@ py::array_t<ll> cm_sketch_preds(int nhashes, py::array_t<ll> np_input, ll width,
     ll *ptr1 = static_cast<ll *>(buf1.ptr);
 
     std::vector<ll> arr;
-    for (size_t idx = 0; idx < buf1.shape[0]; idx++)
+    for (int idx = 0; idx < (int)buf1.shape[0]; idx++)
     {
         arr.push_back(ptr1[idx]);
     }
@@ -27,7 +27,7 @@ py::array_t<ll> cm_sketch_preds(int nhashes, py::array_t<ll> np_input, ll width,
     std::uniform_int_distribution<> width_distrib(0, width - 1);
     for (int i = 0; i < nhashes; i++)
     {
-        for (int j = 0; j < arr.size(); j++)
+        for (int j = 0; j < (int)arr.size(); j++)
         {
             rnd[i][j] = width_distrib(gen);
         }
@@ -43,7 +43,7 @@ py::array_t<ll> cm_sketch_preds(int nhashes, py::array_t<ll> np_input, ll width,
 
     for (int i = 0; i < nhashes; i++)
     {
-        for (int j = 0; j < arr.size(); j++)
+        for (int j = 0; j < (int)arr.size(); j++)
         {
             a[i][rnd[i][j]] += arr[j];
         }
@@ -81,7 +81,7 @@ py::array_t<double> count_sketch_preds(int nhashes, py::array_t<ll> np_input, ll
     ll *ptr1 = static_cast<ll *>(buf1.ptr);
 
     std::vector<ll> arr;
-    for (size_t idx = 0; idx < buf1.shape[0]; idx++)
+    for (int idx = 0; idx < (int)buf1.shape[0]; idx++)
     {
         arr.push_back(ptr1[idx]);
     }
@@ -93,14 +93,14 @@ py::array_t<double> count_sketch_preds(int nhashes, py::array_t<ll> np_input, ll
 
     for (int i = 0; i < nhashes; i++)
     {
-        for (int j = 0; j < arr.size(); j++)
+        for (int j = 0; j < (int)arr.size(); j++)
         {
             rnd[i][j] = width_distrib(gen);
         }
     }
     for (int i = 0; i < nhashes; i++)
     {
-        for (int j = 0; j < arr.size(); j++)
+        for (int j = 0; j < (int)arr.size(); j++)
         {
             rnds[i][j] = coin(gen);
         }
@@ -116,7 +116,7 @@ py::array_t<double> count_sketch_preds(int nhashes, py::array_t<ll> np_input, ll
 
     for (int i = 0; i < nhashes; i++)
     {
-        for (int j = 0; j < arr.size(); j++)
+        for (int j = 0; j < (int)arr.size(); j++)
         {
             a[i][rnd[i][j]] += (2 * rnds[i][j] - 1) * arr[j];
         }

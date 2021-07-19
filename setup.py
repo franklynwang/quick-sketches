@@ -41,6 +41,7 @@ setup(
     extras_require={"test": "pytest"},
     install_requires=[
         'numpy>=1.16',
+        'setuptools>=42.0.0',
     ],
     # Currently, build_ext only provides an optional "highest supported C++
     # level" feature, but in the future it may provide more features.
